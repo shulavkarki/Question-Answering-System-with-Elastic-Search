@@ -1,3 +1,4 @@
 ENDPOINT = "http://localhost:9200"
 MODEL_NAME = "all-MiniLM-L12-v2"
 INDEX_NAME = "covid-qa"
+DATASET_PATH = "../dataset/qa.csv"

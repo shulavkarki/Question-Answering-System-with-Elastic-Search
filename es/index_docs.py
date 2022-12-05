@@ -2,8 +2,9 @@ import pandas as pd
 from elasticsearch import helpers
 from sentence_transformers import SentenceTransformer
 
-from es import connect_elastic, configurations
 from config import settings
+from es import connect_elastic, configurations
+
 def create_index(es_conn):
     """
     It creates an index in Elasticsearch with the name `index_name` and the settings and mappings
@@ -22,7 +23,7 @@ def generate_docs():
     It reads the csv file, drops the columns that are not needed, and then iterates over the rows of the
     dataframe, and for each row, it creates a document with the question_embedding, answer, and url
     """
-    df = pd.read_csv('./dataset/qa.csv')
+    df = pd.read_csv(settings.DATASET_PATH)
     df.drop(labels=['source', 'wrong_answer'], axis=1, inplace=True)
     for row in df:
         doc = {
