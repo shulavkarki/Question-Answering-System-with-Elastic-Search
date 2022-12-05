@@ -3,7 +3,8 @@ from elasticsearch import helpers
 from sentence_transformers import SentenceTransformer
 
 from config import settings
-from es import connect_elastic, configurations
+from es_configurations import configurations
+from connectelastic import connect_elastic
 
 def create_index(es_conn):
     """
