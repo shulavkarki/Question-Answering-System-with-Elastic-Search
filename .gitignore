@@ -1,0 +1,5 @@
+
+# Ignore dynaconf secret files
+__pycache__/
+elasticsearch/
+.secrets.*
